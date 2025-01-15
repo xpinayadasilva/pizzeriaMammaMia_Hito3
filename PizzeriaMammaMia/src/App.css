@@ -87,10 +87,15 @@
     display: flex;
   }
 
-  #itemCart{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  #itemCart{   
+    background-color: white;
+    display: grid;
+    grid-template-columns:  1fr  1fr  1fr 1fr 1fr;
+    /* grid-template-rows: [row-start] 1fr [row-mid-start] 1fr [row-mid-end] 1fr [row-end]; */
+    min-height: 100px;
+    color: black; 
+    justify-items: start;
+    align-items: center;
 
   }
 

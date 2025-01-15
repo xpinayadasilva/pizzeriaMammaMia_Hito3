@@ -32,28 +32,27 @@ function Cart(){
     }
 
     return (
-        <div>
-            <h1 className="text-2xl font-semibold text-center mb-8">Carrito de compras</h1>            
+        <div className="bg-white">
+            <h1 className="text-2xl font-semibold text-center mb-8 text-black">Carrito de compras</h1>           
             
-            {cart.map((item) => (
-                <div id="itemCart" key={item.id}>                    
+            {cart.map((item) => (                
+                <div id="itemCart" key={item.id}>                                       
                     <img src={item.img} alt={item.name}
                         className='w-24 h-24 rounded' />                         
                         <p>{item.name}</p>
                         <p>{item.price}</p>
                         <p>{item.quantity}</p>                       
                         <div className='flex space-x-2'>
-                                <button onClick={() => decreaseQuantity(item.id)} className='bg-red-500 text-white px-3 py-1 rounded'>-</button>
-                                <button onClick={() => increaseQuantity(item.id)} className='bg-blue-500 text-white px-3 py-1 rounded'>+</button>
+                                <button onClick={() => decreaseQuantity(item.id)} className="text-red-500 px-3 py-1  border-solid border-red-500 bg-white rounded ">-</button>
+                                <button onClick={() => increaseQuantity(item.id)} className=" text-blue-500 px-3 py-1 border-solid border-blue-500  bg-white rounded">+</button>
                         </div>   
-                </div>
-            ))}   
-                     
-            <div>
-                <h3>Total: ${calculateTotal()}</h3>
-                <button>Pagar</button>
-            </div>
+                </div>                 
+            ))}                     
+        <div>
+        <h2 className="text-black bold"> Total: ${calculateTotal()}</h2>
+        <button>Pagar</button>
         </div>
+    </div>
     )
 }
 export default Cart;
